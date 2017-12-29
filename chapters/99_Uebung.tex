@@ -101,10 +101,71 @@
   \end{enumerate}
 \end{problem*}
 
-\section{2017-11-03}
-Nachtragen
+\section{2017-11-03 - Übungsblatt 2}
+\begin{problem*}[1a]
+Es reicht zu zeigen, dass zu je zwei Punkten $ p_1, p_2 \in \mathbb{R}^2$ eine Isometrie $\varphi_{ p_1,p_2 }: \mathbb{R}^2 \to \mathbb{R}$ existiert mit $ \varphi_{ p_1,p_2 }(0,0) = p_1 $ und
+$\varphi_{ p_1,p_2 }(0,l) = p_2$, wobei $ \coloneqq d_e(p_1,p_2) $.\\
+Dann gibt es für $ p_1,p_2,q_1,q_2 \in \mathbb{R}^2 $ mit $ d_e(p_1,p_2) = l = d_e(q_1,q_2)$ eine Isometrie $ \varphi \coloneqq \varphi_{ q_1,q_2 } \circ \varphi_{ p_1,p_2 }^{ -1 } $, die das gewünschte Liefert.\\  
+Sei $p_1 = (x_1,y_1), p_2 = (x_2, y_2) $. Für $ (x,y) \in \mathbb{R}^2 $ wähle
+\begin{equation*}
+\varphi_{ p_1p_2} \coloneqq \begin{pmatrix}
+	y_2-y_1 & x_2 - x_1 \\
+	x_1 - x_2 & y_2 -y_1
+\end{pmatrix}\cdot
+\begin{pmatrix}
+x\\
+y	
+\end{pmatrix} + 
+\begin{pmatrix}
+x_1\\
+y_1
+\end{pmatrix}
+\end{equation*}
+Dann ist $ \varphi_{ p_1p_2 } $ die gewünschte Isometrie.\\
+Zeige, indem man $(0,0)$ und $ (0,l) $ einsetzt.
+\end{problem*}
 
-\section{2017-11-10}
+\begin{problem*}[1b]
+Analog zu a).\\
+Sei $ X = (S^2, d_s) $. Gesucht $ \psi_{ p_1p_2 }: S^2 \to S^2$ eine Isometrie mit:
+\begin{equation}
+	\psi_{ p_1p_2 }(\begin{pmatrix}1 \\ 0 \\ 0\end{pmatrix}) = p_1 \\
+	\psi_{ p_1p_2 }(\begin{pmatrix}a \\ b \\ 0\end{pmatrix}) = p_2
+\end{equation}	
+wobei 
+\begin{align*}
+a &= cos(d_s(p_1,p_2)) = \langle p_1, p_2 \rangle \\
+b &= sin (d_s(p_1,p_2)) = \Vert p_1 \times p_2 \Vert
+\end{align*}
+\emph{Bemerkung:} $d_s(p,q) = cos^{ -1 } \langle p,q \rangle$.\\
+Seien $ p_1, p_2 \in S^2 $ wähle:
+\begin{equation*}
+	\psi_{ p_1p_2 }(\begin{pmatrix}x \\ y \\ z\end{pmatrix}) \coloneqq x \cdot p_1 + 
+	\frac{y}{b} (p_2-ap_1) + \frac{z}{b}(p_1 \times p_2)
+\end{equation*}
+Damit gilt wie gefordert: 
+\begin{equation*}
+	\psi_{ p_1p_2 }(\begin{pmatrix}1\\ 0 \\ 0\end{pmatrix}) = p_1 \\
+	\psi_{ p_1p_2 }(\begin{pmatrix}a \\ b \\ 0\end{pmatrix}) = p_2
+\end{equation*}
+\emph{Nachrechnen!}\\
+eine Isometrie von $\mathbb{R}^3$ nach $\mathbb{R}^3$, die den Ursprung fest lässt, erzeugt eine Isometrie auf $S = \{ p \in \mathbb{R}^3 | d_e(0,p) = 1 \}$ mit der euklidischen Metrik $ d_e $.\\
+\textbf{Zu zeigen:} $\psi_{ p_1p_2 }$ ist lineare Isometrie auf $\mathbb{R}^3$.\\
+Es reicht zu zeigen, dass $\{ p_1, \frac{1}{b}(p_2 - ap_1), \frac{1}{b}(p_1 \times p_2) \}$ eine Orthonormalbasis ist.\\
+\emph{Hier sind die Eigenschaften der ONB über die Skalarprodukte} $\langle \cdot , \cdot \rangle$ \emph{nachzurechnen!}\\
+Speziell: \\
+$\langle \frac{1}{b}(p_2 - ap_1), \frac{1}{b}(p_1 \times p_2\rangle = 0$, weil lineare Kombinationen von $ p_1, p_2 $ immer orthogonal zu $ p_1 \times p_2 $ stehen.\\
+\\
+Für $ p,q \in S^2$ ist 
+\begin{align*}
+	d_e(p,q) = \sqrt{ \langle p-q,p-q \rangle } &= \sqrt{ \langle p,p \rangle - 2\langle p,q \rangle + \langle q,q \rangle } \\
+	&=\sqrt{ 2 - 2\langle p,q \rangle }
+\end{align*}
+und $d_s(p,q) = cos^{ -1 } (\langle p,q \rangle) = cos^{ -1 }(1- \frac{1}{2}d_e(p,q)^2)$.\\
+Sei $f(x) = cos^{ -1 }(1- \frac{1}{2}x^2)$ Dann ist $ d_s(p,q) = f(d_e(p,q)) $.\\
+
+\end{problem*}
+\section{2017-11-10 - Übungsblatt 3}
 
 \begin{problem*}[1]
   Sei $ (X, d) $ ein metrischer Raum. Zu zeigen: Die Menge $ O $ aller $ d $-offenen\footnote{\textbf{$ d- $ offen}: $ U \subset X $ heißt $ d $-offen, falls $ \forall x \in U \exists \ \epsilon > 0 : B_\epsilon(x) \subseteq U $.} Teilmengen von $ X $ ist Topologie. Wir zeigen die Eigenschaften einer Topologie.
@@ -685,7 +746,7 @@ Sei $ n \geq 3 $, sei G ein planarer Graph mit $ k(G) \geq n $, so dass alle Kre
 Sei oBdA $ G $ eben. Sei $ K $ die Menge der Kanten von $ G $, sei $ S $ die Menge der Flächenstücke von $ G $.\\
 Sei $ W = \{ (k,s) \in K \times S : $k liegt auf dem Rand von S$ \} $.\\
 Für alle $k \in K$ gibt es höchstens zwei $s \in S$ mit $ (k,s) \in W $, damit gilt $ \vert W \vert \leq 2 \vert K \vert $. \\
-Für alle $ s \in S$ gibt es mindestens $ n $ Kanten $k \in K$, sodass $ (k,s) \in W $, denn falls $ s $ beschränkt ist, der äußere Rand von $ s $ ebsteht aus einem Kreis, der min $ n $ Kanten hat. Wenn $ s $ unbeschränkt:
+Für alle $ s \in S$ gibt es mindestens $ n $ Kanten $k \in K$, sodass $ (k,s) \in W $, denn falls $ s $ beschränkt ist, besteht der äußere Rand von $ s $ aus einem Kreis, der min $ n $ Kanten hat (\emph{Vor.}). Wenn $ s $ unbeschränkt:
 \begin{itemize}
    \item \textbf{Fall 1:} $ G $ ist Baum. Dann ist $ s $ das einizige Flächenstück und alle Kanten berühren $ s $. ($ k(G) \geq n$).
    \item \textbf{Fall 2:} $ G $ ist kein Baum, dann schließt $ s $ andere Flächenstücke ein, der Rand dieser Einschlüsse besteht aus einem oder mehreren Kreisen. Alle $ \geq n $ Kanten dieser Kreise berühren $ s $.
@@ -714,7 +775,7 @@ Vgl. Zeichnungen:
 Für einen platonischen Körper $ P \subseteq \mathbb{R}^3 $ mit Zentrum $ 0 $ ist:
 \begin{align*}
    Sym(P) &\coloneqq \{ f \in O(3) : f(P) = P \} \\
-   Sym(P) &\coloneqq \{ f \in SO(3) : f(P) = P \}
+   Sym_0(P) &\coloneqq \{ f \in SO(3) : f(P) = P \}
  \end{align*} 
 Sei $ P $ Würfel.\\
 \textbf{Zu zeigen:} 
@@ -724,15 +785,17 @@ Sei $ P $ Würfel.\\
 \end{itemize}
 \textbf{Behauptung:} 
 $\vert Sym(P) \vert \leq 48, \vert Sym_0(P) \vert \leq 24$.\\
-\textbf{Beweis:} Sei $ E $ eine Ecke von $ P $ und seien $ F,G,H $ die zu $ E $ benachbarten Ecken. Da $\phi$ Ecken von $ P $ auf Ecken von $ P $ abbilden, gibt es nur 8 mögliche Werte von $\phi(E)$. Da $ \phi $ benachbarte Ecken auf benachbarte Ecken von $ P $ abbildet, sind $\phi(G), \phi(H), \phi(F)$ in einer von 6 Reihenfolgen die Nachbarn von $ \phi(E) $. Jetzt ist aber $ \phi $ vollständig durch $\phi|_\{ E,F,G,H \}$ bestimmt, da $ E,F,G,H $ ein Erzeugendensystem von $\mathbb{R}^3$ ist.\\
-Damit ist $ \vert Sym(P) \leq 6 \cdot 8 = 48 \vert $. \\
-$Sym_0(P) $ ist Untergruppe von $ Sym(P) $. Nach dem Satz von Lagrage ist $\frac{\vert Sym(P) \vert}{\vert Sym_0(P) \vert} \in \mathbb{N} (*)$.\\
+\textbf{Beweis:} Sei $ S $ eine Ecke von $ P $ und seien $ F,G,H $ die zu $ E $ benachbarten Ecken. Da $\phi$ Ecken von $ P $ auf Ecken von $ P $ abbilden, gibt es nur 8 mögliche Werte von $\phi(E)$. Da $ \phi $ benachbarte Ecken auf benachbarte Ecken von $ P $ abbildet, sind $\phi(G), \phi(H), \phi(F)$ in einer von 6 Reihenfolgen die Nachbarn von $ \phi(E) $. Jetzt ist aber $ \phi $ vollständig durch $\phi|_{\{ E,F,G,H \}}$ bestimmt, da $ E,F,G,H $ ein Erzeugendensystem von $\mathbb{R}^3$ ist.\\
+Damit ist $ \vert Sym(P) \vert \leq 6 \cdot 8 = 48$. \\
+$Sym_0(P) $ ist Untergruppe von $ Sym(P) $. \\
+Nach dem Satz von Lagrange ist $\frac{\vert Sym(P) \vert}{\vert Sym_0(P) \vert} \in \mathbb{N} (\star)$.\\
 Da $\begin{pmatrix}
 	-1 & 0 & 0 \\
 	0 & -1 & 0 \\
 	0 & 0 & -1 
-\end{pmatrix} \in Sym(P)$, aber $det(-I) = (-1)^3 = -1$, ist $I \in Sym(P) \setminus Sym_0(P)$, also ist $\vert Sym(P) \vert > \vert Sym_0(P) \vert $.\\
-Wegen $ (*) $ folgt
+\end{pmatrix} \in Sym(P)$, aber $det(-I) = (-1)^3 = -1$,\\
+ist $I \in Sym(P) \setminus Sym_0(P)$, also ist $\vert Sym(P) \vert > \vert Sym_0(P) \vert $.\\
+Wegen $ (\star) $ folgt
 \begin{equation*}
 	\frac{\vert Sym(P) \vert}{\vert Sym_0(P) \vert} \geq 2 \Rightarrow \vert Sym_0(P) \vert \leq \frac{1}{2} \vert Sym(P) \vert \leq 24.
 \end{equation*}
@@ -749,14 +812,14 @@ Da $ B_{ ij }(D)  $ von Transpositionen erzeugt wird reicht es zu zeigen, dass $
 Gesucht: $\phi \in Sym_0(P)$ mit $h(\phi) = (d_1,d_2).$\\
 Wähle $ \phi $ als Rotation um $ 180^{ \circ } $ um die gestrichelte Achse (vgl. Abb.), dann ist $\phi(P) = P$, $det(\phi) = 1, \phi(RL) = BL, \phi(BL) = RL, \phi(GL) = GL, \phi(YL) = YL$. Wobei $ GL =$ Grüne Linie, etc.\\ 
 Damit ist $h(\phi) = (d_1, d_2).$\\
-Wir haben einen sujektiven Hom. $h: Sym_0(P) \to B_{ ij }(D)$. Aus $ \vert Sym_0(P) \vert \leq 24 = \vert S_4 \vert = \vert B_{ ij }(D) \vert$ folgt sofort, dass $\vert Sym_0(P) \vert = \vert B_{ ij }(D) \vert$ ist und dass $ h $ bijektiv ist:
+Wir haben einen surjektiven Hom. $h: Sym_0(P) \to B_{ ij }(D)$. Aus $ \vert Sym_0(P) \vert \leq 24 = \vert S_4 \vert = \vert B_{ ij }(D) \vert$ folgt sofort, dass $\vert Sym_0(P) \vert = \vert B_{ ij }(D) \vert$ ist und dass $ h $ bijektiv ist:
 \begin{equation*}
 	Sym_0(P) \cong B_{ ij }(D) \cong S_4.
 \end{equation*}
 \textbf{Behauptung:} $Sym(P) \cong Sym_0(P) \times \{ -1, 1 \}.$\\
 \textbf{Beweis:} Seien:
 \begin{align*}
-	&g: Sym(P) \to Sym_0(P) \times \{ -1, 1 \}, \psi \mapsto (det(\psi) \cdot \psi,det(\psi))\\
+	&g: Sym(P) \to Sym_0(P) \times \{ -1, 1 \}, \psi \mapsto (det(\psi) \cdot \psi,det(\psi)) \\
 	&k: Sym_0(P) \times \{ -1, 1 \} \to Sym(P), (\varphi, \varepsilon) \mapsto \varepsilon \phi.
 \end{align*}
 \textbf{Behauptung:} $ k,g $ sind zueinander Invers.\\
